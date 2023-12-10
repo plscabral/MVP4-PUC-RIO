@@ -1,14 +1,3 @@
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <h3 align="center">Noticiei (Backend)</h3>
-</div>
-
-<!-- ABOUT THE PROJECT -->
-## Sobre o projeto
-
-Uma plataforma que tem como objetivo, levar as noticias de uma forma fácil, simples e direta paras seus usuários.
-
 ### Tecnologias utilizadas
 
 * [![Python][Python]][Python-url]
