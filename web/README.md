@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Tecnologias utilizadas
 
-## Getting Started
+* [![React][React]][React-url]
+* [![Next][Next]][Next-url]
 
-First, run the development server:
+### Pré-requisitos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* node
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* yarn
+  ```sh
+  npm install --global yarn
+  ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Instalação
 
-## Learn More
+1. Instalar as dependências do projeto
+   ```sh
+   npm install ou yarn install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+### Execução
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Rodar o comando abaixo:
+   ```sh
+   npm run dev ou yarn dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<!-- CONTACT -->
+## Contato
 
-## Deploy on Vercel
+[![Intagram Badge](https://img.shields.io/badge/-@plscabral-6633cc?style=flat-square&labelColor=6633cc&logo=instagram&logoColor=white&link=https://twitter.com/dieegosf)](https://www.instagram.com/plscabral/)
+[![Linkedin Badge](https://img.shields.io/badge/-Paulo%20Cabral-6633cc?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/plscabral/)](https://www.linkedin.com/in/plscabral/)
+[![Gmail Badge](https://img.shields.io/badge/-paulo.luiz127@gmail.com-6633cc?style=flat-square&logo=Gmail&logoColor=white&link=mailto:diego.schell.f@gmail.com)](mailto:paulo.luiz127@gmail.com)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[React]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Next]: https://img.shields.io/badge/next.js-20232A?style=for-the-badge&logo=nextdotjs&logoColor=61DAFB
+[Next-url]: https://nextjs.org/
