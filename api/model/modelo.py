@@ -34,7 +34,7 @@ class Model:
                 form.exerciseangia,
                 form.oldpeak,
                 form.slope,
-                form.noofmajorvessels,
+                form.noofmajorvessels
             ]
         )
 

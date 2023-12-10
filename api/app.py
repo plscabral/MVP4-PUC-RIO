@@ -1,13 +1,8 @@
 from flask_openapi3 import OpenAPI, Info, Tag
 from flask import redirect
-# from urllib.parse import unquote
-
-# from sqlalchemy.exc import IntegrityError
-
 from model import Session, Paciente, Model
 from schemas import *
 from flask_cors import CORS
-
 import joblib
 
 # Criando a instância do objeto OpenAPI.
@@ -16,8 +11,8 @@ app = OpenAPI(__name__, info=info)
 CORS(app)
 
 # Estabelecendo tags para a categorização das rotas
-home_tag = Tag(name="Documentação", description="Escolha de documentação: Swagger, Redoc ou RapiDoc")
-paciente_tag = Tag(name="Paciente", description="Inclusão, visualização, exclusão e previsão de pacientes diagnosticados com câncer de mama")
+home_tag = Tag(name="Documentação", description="")
+paciente_tag = Tag(name="Paciente", description="")
 
 # Endpoint principal
 @app.get('/', tags=[home_tag])
@@ -51,6 +46,7 @@ def predict(form: PacienteSchema):
     modelo = Model.carrega_modelo(ml_path, scaler_path)
     
     paciente = Paciente(
+        name=form.name,
         age=form.age,
         gender=form.gender,
         chestpain=form.chestpain,

@@ -1,12 +1,10 @@
 from pydantic import BaseModel
 from typing import Optional, List
 from model.paciente import Paciente
-import json
-import numpy as np
-
 
 class PacienteSchema(BaseModel):
     """Define como um novo paciente a ser inserido deve ser representado"""
+    name: str = "John"
     age: int = 25
     gender: int = 1
     chestpain: float = 0
@@ -25,6 +23,7 @@ class PacienteViewSchema(BaseModel):
     """Define como um paciente será retornado"""
 
     id: int = 1
+    name: str = "John"
     age: int = 25
     gender: int = 1
     chestpain: float = 0
@@ -69,20 +68,45 @@ def apresenta_pacientes(pacientes: List[Paciente]):
         result.append(
             {
                 "id": paciente.id,
+                "name": paciente.name,
                 "age": paciente.age,
-                "gender": paciente.gender,
-                "chestpain": paciente.chestpain,
-                "restingBP": paciente.restingBP,
+                "gender": map("gender", paciente.gender),
+                "chestpain": map("chestpain", paciente.chestpain),
+                "restingBP": map("restingBP", paciente.restingBP),
                 "serumcholestrol": paciente.serumcholestrol,
                 "fastingbloodsugar": paciente.fastingbloodsugar,
                 "restingrelectro": paciente.restingrelectro,
                 "maxheartrate": paciente.maxheartrate,
-                "exerciseangia": paciente.exerciseangia,
+                "exerciseangia": map("exerciseangia", paciente.exerciseangia),
                 "oldpeak": paciente.oldpeak,
-                "slope": paciente.slope,
+                "slope": map("slope", paciente.slope),
                 "noofmajorvessels": paciente.noofmajorvessels,
-                "target": paciente.target,
+                "target": map("target", paciente.target),
             }
         )
 
     return {"pacientes": result}
+
+def map(field: str, value: float):
+    if field == "gender":
+        if value == 0: return "Female"
+        else: return "Male"
+    elif field == "chestpain":
+        if value == 0: return "Typical angina"
+        elif value == 1: return "Atypical angina"
+        elif value == 2: return "Non-anginal pain"
+        else: return "Asymptomatic"
+    elif field == "restingBP":
+        if value == 0: return "Normal"
+        elif value == 1: return "ST-T wave abnormality"
+        else: return "Probable or definite left ventricular hypertrophy"
+    elif field == "exerciseangia":
+        if value == 0: return "No"
+        else: return "Yes"
+    elif field == "slope":
+        if value == 1: return "Upsloping"
+        elif value == 2: return "Flat"
+        else: return "Downsloping"
+    elif field == "target":
+        if value == 0: return "Absence of Heart Disease"
+        else: return "Presence of Heart Disease"

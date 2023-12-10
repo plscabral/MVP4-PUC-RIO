@@ -12,6 +12,7 @@ class Paciente(Base):
 
     # entrada
     id = Column(Integer, primary_key=True)
+    name = Column("name", String)
     age = Column("age", Integer)
     gender = Column("gender", Integer)
     chestpain = Column("chestpain", Float)
@@ -30,6 +31,7 @@ class Paciente(Base):
 
     def __init__(
         self,
+        name: str,
         age: int,
         gender: int,
         chestpain: float,
@@ -45,25 +47,7 @@ class Paciente(Base):
         target: int,
         created_at: Union[DateTime, None] = None,
     ):
-        """
-        Cria um Paciente
-
-        # Arguments:
-        #     age: idade
-        #     gender (int): genero
-        #     chestpain (int): 
-        #     restingBP (int): concentração de basofilos
-        #     serumcholestrol (int): pressão creatinina
-        #     fastingbloodsugar (int): espessura proteina_c
-        #     restingrelectro (int): número de hemoglobina
-        #     maxheartrate (int): número de hemoglobina
-        #     exerciseangia (int): número de hemoglobina
-        #     oldpeak (int): número de hemoglobina
-        #     slope (int): número de hemoglobina
-        #     noofmajorvessels (int): número de hemoglobina
-        #     target (int): diagnóstico
-        #     created_at: data de quando o paciente foi inserido à base
-        # """
+        self.name = name
         self.age = age
         self.gender = gender
         self.chestpain = chestpain
