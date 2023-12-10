@@ -28,7 +28,7 @@ export const patientFormSchema = z.object({
   restingBP: z.string(),
   serumcholestrol: z.string(),
   fastingbloodsugar: z.string(),
-  restingrelectro: z.number(),
+  restingrelectro: z.string(),
   maxheartrate: z.string(),
   exerciseangia: z.string(),
   oldpeak: z.string(),

@@ -33,15 +33,15 @@ export function HomeTable({ data }: Props) {
       toast({
         type: "background",
         className: "bg-emerald-600 text-white border-none",
-        title: "Paciente deletado com sucesso!",
+        title: "Patient deleted successfully!",
         duration: 3000
       })
     }
     else {
       toast({
         variant: "destructive",
-        title: "Erro ao deletar paciente!",
-        description: "Houve um problema com a sua solicitação.",
+        title: "Error when deleting patient!",
+        description: "There was a problem with your request.",
         duration: 3000
       })
     }
@@ -50,7 +50,7 @@ export function HomeTable({ data }: Props) {
   return (
     <Card className="w-[90%] bg-white/80">
       <Table className="w-full rounded-lg">
-        {data?.length === 0 && <TableCaption className="my-2">Nenhum item encontrado.</TableCaption>}
+        {data?.length === 0 && <TableCaption className="my-2">No items found.</TableCaption>}
 
         <TableHeader className="text-left text-xs">
           <TableRow className="rounded-lg bg-gray-100 hover:bg-gray-100">

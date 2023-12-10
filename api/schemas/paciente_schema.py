@@ -72,10 +72,10 @@ def apresenta_pacientes(pacientes: List[Paciente]):
                 "age": paciente.age,
                 "gender": map("gender", paciente.gender),
                 "chestpain": map("chestpain", paciente.chestpain),
-                "restingBP": map("restingBP", paciente.restingBP),
+                "restingBP": paciente.restingBP,
                 "serumcholestrol": paciente.serumcholestrol,
                 "fastingbloodsugar": paciente.fastingbloodsugar,
-                "restingrelectro": paciente.restingrelectro,
+                "restingrelectro": map("restingrelectro", paciente.restingrelectro),
                 "maxheartrate": paciente.maxheartrate,
                 "exerciseangia": map("exerciseangia", paciente.exerciseangia),
                 "oldpeak": paciente.oldpeak,
@@ -96,7 +96,7 @@ def map(field: str, value: float):
         elif value == 1: return "Atypical angina"
         elif value == 2: return "Non-anginal pain"
         else: return "Asymptomatic"
-    elif field == "restingBP":
+    elif field == "restingrelectro":
         if value == 0: return "Normal"
         elif value == 1: return "ST-T wave abnormality"
         else: return "Probable or definite left ventricular hypertrophy"

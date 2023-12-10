@@ -8,8 +8,9 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { patientFormSchema, PatientForm } from "@/types/patient"
 
 // components
-import { Form, FormField, FormItem } from "@/components/ui/form"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
@@ -31,6 +32,7 @@ export function HomeForm() {
       restingBP: "",
       serumcholestrol: "",
       fastingbloodsugar: "",
+      restingrelectro: "",
       maxheartrate: "",
       exerciseangia: "",
       oldpeak: "",
@@ -46,7 +48,7 @@ export function HomeForm() {
       toast({
         type: "background",
         className: "bg-emerald-600 text-white border-none",
-        title: "Paciente cadastrado com sucesso!",
+        title: "Patient registered successfully!",
         duration: 3000
       })
 
@@ -55,8 +57,8 @@ export function HomeForm() {
     else {
       toast({
         variant: "destructive",
-        title: "Erro ao cadastrar paciente!",
-        description: "Houve um problema com a sua solicitação.",
+        title: "Error when registering patient!",
+        description: "There was a problem with your request.",
         duration: 3000
       })
     }
@@ -102,38 +104,61 @@ export function HomeForm() {
 
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="gender">Gender</Label>
+
                 <FormField
                   control={form.control}
                   name="gender"
                   render={({ field }) => (
-                    <FormItem className="flex flex-col">
-                      <Input id="gender" {...field} />
-                    </FormItem>
+                    <Select onValueChange={field.onChange} value={field.value}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Choose an option" />
+                        </SelectTrigger>
+                      </FormControl>
+
+                      <SelectContent>
+                        <SelectItem value="0">Female</SelectItem>
+                        <SelectItem value="1">Male</SelectItem>
+                      </SelectContent>
+                    </Select>
                   )}
                 />
               </div>
 
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="chestpain">Chest pain</Label>
+
                 <FormField
                   control={form.control}
                   name="chestpain"
                   render={({ field }) => (
-                    <FormItem className="flex flex-col">
-                      <Input id="chestpain" {...field} />
-                    </FormItem>
+                    <Select onValueChange={field.onChange} value={field.value}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Choose an option" />
+                        </SelectTrigger>
+                      </FormControl>
+
+                      <SelectContent>
+                        <SelectItem value="0">Typical angina</SelectItem>
+                        <SelectItem value="1">Atypical angina</SelectItem>
+                        <SelectItem value="2">Non-anginal pain</SelectItem>
+                        <SelectItem value="3">Asymptomatic</SelectItem>
+                      </SelectContent>
+                    </Select>
                   )}
                 />
               </div>
 
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="restingBP">Resting BP</Label>
+
                 <FormField
                   control={form.control}
                   name="restingBP"
                   render={({ field }) => (
                     <FormItem className="flex flex-col">
-                      <Input id="restingBP"  {...field} />
+                      <Input id="restingrelectro" {...field} />
                     </FormItem>
                   )}
                 />
@@ -154,26 +179,47 @@ export function HomeForm() {
 
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="fastingbloodsugar">Fasting blood sugar</Label>
+
                 <FormField
                   control={form.control}
                   name="fastingbloodsugar"
                   render={({ field }) => (
-                    <FormItem className="flex flex-col">
-                      <Input id="fastingbloodsugar" {...field} />
-                    </FormItem>
+                    <Select onValueChange={field.onChange} value={field.value}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Choose an option" />
+                        </SelectTrigger>
+                      </FormControl>
+
+                      <SelectContent>
+                        <SelectItem value="0">No</SelectItem>
+                        <SelectItem value="1">Yes</SelectItem>
+                      </SelectContent>
+                    </Select>
                   )}
                 />
               </div>
 
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="restingrelectro">Resting electrocardiogram</Label>
+
                 <FormField
                   control={form.control}
                   name="restingrelectro"
                   render={({ field }) => (
-                    <FormItem className="flex flex-col">
-                      <Input id="restingrelectro" {...field} />
-                    </FormItem>
+                    <Select onValueChange={field.onChange} value={field.value}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Choose an option" />
+                        </SelectTrigger>
+                      </FormControl>
+
+                      <SelectContent>
+                        <SelectItem value="0">Normal</SelectItem>
+                        <SelectItem value="1">ST-T wave abnormality</SelectItem>
+                        <SelectItem value="2">Probable or definite left ventricular hypertrophy</SelectItem>
+                      </SelectContent>
+                    </Select>
                   )}
                 />
               </div>
@@ -193,13 +239,23 @@ export function HomeForm() {
 
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="exerciseangia">Exercise angina</Label>
+
                 <FormField
                   control={form.control}
                   name="exerciseangia"
                   render={({ field }) => (
-                    <FormItem className="flex flex-col">
-                      <Input id="exerciseangia" {...field} />
-                    </FormItem>
+                    <Select onValueChange={field.onChange} value={field.value}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Choose an option" />
+                        </SelectTrigger>
+                      </FormControl>
+
+                      <SelectContent>
+                        <SelectItem value="0">No</SelectItem>
+                        <SelectItem value="1">Yes</SelectItem>
+                      </SelectContent>
+                    </Select>
                   )}
                 />
               </div>
@@ -219,13 +275,24 @@ export function HomeForm() {
 
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="slope">Slope</Label>
+
                 <FormField
                   control={form.control}
                   name="slope"
                   render={({ field }) => (
-                    <FormItem className="flex flex-col">
-                      <Input id="slope" {...field} />
-                    </FormItem>
+                    <Select onValueChange={field.onChange} value={field.value}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Choose an option" />
+                        </SelectTrigger>
+                      </FormControl>
+
+                      <SelectContent>
+                        <SelectItem value="1">Upsloping</SelectItem>
+                        <SelectItem value="2">Flat</SelectItem>
+                        <SelectItem value="3">Downsloping</SelectItem>
+                      </SelectContent>
+                    </Select>
                   )}
                 />
               </div>

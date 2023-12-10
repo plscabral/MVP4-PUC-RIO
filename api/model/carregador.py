@@ -8,5 +8,4 @@ class Carregador:
         adicionais.
         """
         
-        return pd.read_csv(url, names=atributos,
-                           skiprows=1, delimiter=',')
+        return pd.read_csv(url, names=atributos,skiprows=1, delimiter=',')
