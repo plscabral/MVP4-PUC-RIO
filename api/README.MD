@@ -10,11 +10,7 @@
 
 ### Instalação
 
-1. Clonar o repositório
-   ```sh
-   git clone https://github.com/plscabral/MVP1-Noticiei-Back.git
-   ```
-2. Rodar o comando abaixo em modo administrador:
+1. Rodar o comando abaixo em modo administrador:
    ```sh
    pip install -r requirements.txt
    ```
