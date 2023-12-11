@@ -74,7 +74,7 @@ def apresenta_pacientes(pacientes: List[Paciente]):
                 "chestpain": map("chestpain", paciente.chestpain),
                 "restingBP": paciente.restingBP,
                 "serumcholestrol": paciente.serumcholestrol,
-                "fastingbloodsugar": paciente.fastingbloodsugar,
+                "fastingbloodsugar": map("fastingbloodsugar", paciente.fastingbloodsugar),
                 "restingrelectro": map("restingrelectro", paciente.restingrelectro),
                 "maxheartrate": paciente.maxheartrate,
                 "exerciseangia": map("exerciseangia", paciente.exerciseangia),
@@ -100,6 +100,9 @@ def map(field: str, value: float):
         if value == 0: return "Normal"
         elif value == 1: return "ST-T wave abnormality"
         else: return "Probable or definite left ventricular hypertrophy"
+    elif field == "fastingbloodsugar":
+        if value == 0: return "No"
+        else: return "Yes"
     elif field == "exerciseangia":
         if value == 0: return "No"
         else: return "Yes"
