@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "41d1a666-4b7d-4d52-8e67-d9b566d79c49",
+		"name": "MVP4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11335076"
+	},
+	"item": [
+		{
+			"name": "Inserindo paciente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Paulo",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "40",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "chestpain",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "restingBP",
+							"value": "94",
+							"type": "text"
+						},
+						{
+							"key": "serumcholestrol",
+							"value": "229",
+							"type": "text"
+						},
+						{
+							"key": "fastingbloodsugar",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "restingrelectro",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "maxheartrate",
+							"value": "115",
+							"type": "text"
+						},
+						{
+							"key": "exerciseangia",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "oldpeak",
+							"value": "3.7",
+							"type": "text"
+						},
+						{
+							"key": "slope",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "noofmajorvessels",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/paciente",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"paciente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter pacientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/pacientes",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"pacientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar paciente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/paciente?id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"paciente"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
