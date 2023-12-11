@@ -17,5 +17,5 @@ https://colab.research.google.com/github/plscabral/MVP4-PUC-RIO/blob/main/Notebo
 ### Apresentação
 
 ```
-
+https://youtu.be/abox7BLVQ_w
 ```
